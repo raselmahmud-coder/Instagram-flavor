@@ -30,7 +30,7 @@ const displayContent = (text) => {
     return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
-const switchTab = (id) => {
+const switchTab = (id, event) => {
     if (id === "posts") {
         document.getElementById( "posts" ).style.display = "grid";
         document.getElementById( "liked" ).style.display = "none";
@@ -42,6 +42,7 @@ const switchTab = (id) => {
 
         displayLikedPosts();
     } else {
+      event.preventDefault();
         document.getElementById( "reported" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "liked" ).style.display = "none";
@@ -153,16 +154,19 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  console.log(reportedPosts);
   const reportedDiv = document.getElementById("reported");
-if (reportedPosts.length !== 0) {
-  posts.forEach((post) => {
+  reportedDiv.innerText = '';
+  const createH1 = document.createElement('h1');
+  if (reportedPosts.length !== 0) {
+    createH1.innerText = `Reported posts`;
+    reportedDiv.appendChild(createH1);
+    reportedPosts.forEach((post) => {
     const div = createPost(post);
     reportedDiv.appendChild(div);
 });
   }
-else {
-  const createH1 = document.createElement('h3');
+  else {
+  // reportedDiv.textContent = '';  
   createH1.innerText = `You haven't any report post`;
   createH1.classList.add('text-danger', 'text-center');
   reportedDiv.appendChild(createH1);
