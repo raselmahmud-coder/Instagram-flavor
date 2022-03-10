@@ -152,11 +152,21 @@ const displayLikedPosts = () => {
 };
 
 const displayReportedPosts = () => {
-    const reportedPosts = getReportedPosts();
-    posts.forEach((post) => {
-        const div = createPost(post);
-        document.getElementById( "reported" ).appendChild(div);
-    });
+  const reportedPosts = getReportedPosts();
+  console.log(reportedPosts);
+  const reportedDiv = document.getElementById("reported");
+if (reportedPosts.length !== 0) {
+  posts.forEach((post) => {
+    const div = createPost(post);
+    reportedDiv.appendChild(div);
+});
+  }
+else {
+  const createH1 = document.createElement('h3');
+  createH1.innerText = `You haven't any report post`;
+  createH1.classList.add('text-danger', 'text-center');
+  reportedDiv.appendChild(createH1);
+}
 };
 
 const loadPosts = async () =>{
