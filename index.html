@@ -81,7 +81,7 @@
             <h2>How does javaScript work?</h2>
             <article>
                 JavaScript is not a compiled language, but it is a translated language. The JavaScript Translator (added in the each browser) is responsible for translating the JavaScript code for the web browser. Every browser have different type of JavaScript Translator/JS engine for example V8, Chakra, Javascript Core Webkit, Spidermonkey.
-                When the JavaScript file is loaded in the browser, JavaScript engine will execute each line of the file from top to bottom (to simplify definition hoisting can skip now). JavaScript engine will parse the code line by line, convert it into machine code and then execute it. JavaScript can handle one task at a time or, in other words, a piece of code at a time.
+                When the JavaScript file is loaded in the browser, JavaScript engine will execute each line of the file from top to bottom (to simplify definition hoisting can skip now). JavaScript engine will read the code line by line, convert it into machine code and then execute it. JavaScript can handle one task at a time or, in other words, a piece of code at a time.
             </article>
             <h2>What does javascript event loop do?</h2>
             <article>
@@ -90,6 +90,53 @@
                 The event loop is a constantly running process that monitors both the callback queue and the call stack.
                 If the call stack is not empty, the event loop waits until it is empty and places the next function from the callback queue to the call stack. If the callback queue is empty, nothing will happen.
             </article>
+            <h2>What do local storage and session storage difference?</h2>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Features</th>
+                    <th scope="col">local storage</th>
+                    <th scope="col">session storage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Maximum data size</th>
+                    <td>5 MB</td>
+                    <td>5 MB</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Blockable by users</th>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Auto expire option</th>
+                    <td>No</td>
+                    <td>Yes</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Supported data types</th>
+                    <td>String only</td>
+                    <td>String only</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Accessible from server side</th>
+                    <td>No</td>
+                    <td>No</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Can be access on</th>
+                    <td>Client side only</td>
+                    <td>Client side only</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Lifetime</th>
+                    <td>Till deleted</td>
+                    <td>Till tab is closed</td>
+                  </tr>
+                </tbody>
+              </table>
         </section>
         <footer></footer>
 
