@@ -77,6 +77,20 @@
                 
             </div>
         </main>
+        <section class="container">
+            <h2>How does javaScript work?</h2>
+            <article>
+                JavaScript is not a compiled language, but it is a translated language. The JavaScript Translator (added in the each browser) is responsible for translating the JavaScript code for the web browser. Every browser have different type of JavaScript Translator/JS engine for example V8, Chakra, Javascript Core Webkit, Spidermonkey.
+                When the JavaScript file is loaded in the browser, JavaScript engine will execute each line of the file from top to bottom (to simplify definition hoisting can skip now). JavaScript engine will parse the code line by line, convert it into machine code and then execute it. JavaScript can handle one task at a time or, in other words, a piece of code at a time.
+            </article>
+            <h2>What does javascript event loop do?</h2>
+            <article>
+                Event loop is looks like restaurant waiter he just collect ( the order) as input requests ETC. and then pass them (data) to the (kitchen) other stuff register callback(intensive operation), after (cooking) certain task completed again (trigger callback) recieve that completed requests ETC (serve th food).
+                In the other hands, JavaScript has a runtime model based on an event loop, which is responsible for executing the code, collecting and processing events.
+                The event loop is a constantly running process that monitors both the callback queue and the call stack.
+                If the call stack is not empty, the event loop waits until it is empty and places the next function from the callback queue to the call stack. If the callback queue is empty, nothing will happen.
+            </article>
+        </section>
         <footer></footer>
 
         <!-- add javascript  file  -->
